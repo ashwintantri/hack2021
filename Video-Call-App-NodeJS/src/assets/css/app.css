@@ -40,8 +40,8 @@
     right: 0;
     position: absolute;
     border: 0;
-    border-top: 1px groove white;
-    border-left: 1px groove white;
+    /* border-top: 1px groove white;
+    border-left: 1px groove white; */
     font-size: small;
 }
 
@@ -68,8 +68,9 @@
 
 
 .remote-video{
-    width:20vw;
     /* max-height: 90vh; */
+    width:18vw;
+    height: 10vw;
 }
 
 
@@ -92,10 +93,8 @@
 
 
 .local-video{
-    /* bottom: 0;
-    left: 0;
-    position: fixed; */
-    width:20vw;
+    width:18vw;
+    height: 10vw;
 }
 
 
@@ -218,7 +217,7 @@
 
 
     .local-video{
-        width:40vw;
+        width:18vw;
     }
 }
 

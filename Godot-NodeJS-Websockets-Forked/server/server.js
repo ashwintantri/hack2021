@@ -76,7 +76,6 @@ wss.on('connection', function connection(ws, req) {
 		var obj = JSON.parse(message); // parse the JSON 
 
 		// obj["videoStream"] = "hello bye";
-		console.log('received message: ', obj); 
 		if(obj.command === "ping"){ // Pin request
 			console.log('got ping request at: ',obj.val) 
 			var reply = {"command":"pong","val":obj.val,}; // make JSON reply

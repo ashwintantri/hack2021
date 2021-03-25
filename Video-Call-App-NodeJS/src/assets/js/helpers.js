@@ -281,7 +281,7 @@ export default {
         //         )
         //     )
         // );
-        let newWidth = '20%'; 
+        let newWidth = '30%'; 
 
         for ( let i = 0; i < totalRemoteVideosDesktop; i++ ) {
             elem[i].style.width = newWidth;
@@ -300,10 +300,10 @@ export default {
             newVid.className = 'remote-video';
 
             //video controls elements
-            let controlDiv = document.createElement( 'div' );
-            controlDiv.className = 'remote-video-controls';
-            controlDiv.innerHTML = `<i class="fa fa-microphone text-white pr-3 mute-remote-mic" title="Mute"></i>
-                <i class="fa fa-expand text-white expand-remote-video" title="Expand"></i>`;
+            // let controlDiv = document.createElement( 'div' );
+            // controlDiv.className = 'remote-video-controls';
+            // controlDiv.innerHTML = `<i class="fa fa-microphone text-white pr-3 mute-remote-mic" title="Mute"></i>
+            //     <i class="fa fa-expand text-white expand-remote-video" title="Expand"></i>`;
 
             //create a new div for card
             let cardDiv = document.createElement( 'div' );

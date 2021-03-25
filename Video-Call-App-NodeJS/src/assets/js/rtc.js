@@ -200,17 +200,17 @@ window.addEventListener( 'load', () => {
                     newVid.className = 'remote-video';
 
                     //video controls elements
-                    let controlDiv = document.createElement( 'div' );
-                    controlDiv.className = 'remote-video-controls';
-                    controlDiv.innerHTML = `<i class="fa fa-microphone text-white pr-3 mute-remote-mic" title="Mute"></i>
-                        <i class="fa fa-expand text-white expand-remote-video" title="Expand"></i>`;
+                    // let controlDiv = document.createElement( 'div' );
+                    // controlDiv.className = 'remote-video-controls';
+                    // controlDiv.innerHTML = `<i class="fa fa-microphone text-white pr-3 mute-remote-mic" title="Mute"></i>
+                    //     <i class="fa fa-expand text-white expand-remote-video" title="Expand"></i>`;
 
                     //create a new div for card
                     let cardDiv = document.createElement( 'div' );
-                    cardDiv.className = 'card card-sm';
+                    // cardDiv.className = 'card card-sm';
                     cardDiv.id = partnerName;
                     cardDiv.appendChild( newVid );
-                    cardDiv.appendChild( controlDiv );
+                    // cardDiv.appendChild( controlDiv );
 
                     //put div in main-section elem
                     document.getElementById( 'videos' ).appendChild( cardDiv );
@@ -352,134 +352,134 @@ window.addEventListener( 'load', () => {
 
 
         //Chat textarea
-        document.getElementById( 'chat-input' ).addEventListener( 'keypress', ( e ) => {
-            if ( e.which === 13 && ( e.target.value.trim() ) ) {
-                e.preventDefault();
+        // document.getElementById( 'chat-input' ).addEventListener( 'keypress', ( e ) => {
+        //     if ( e.which === 13 && ( e.target.value.trim() ) ) {
+        //         e.preventDefault();
 
-                sendMsg( e.target.value );
+        //         sendMsg( e.target.value );
 
-                setTimeout( () => {
-                    e.target.value = '';
-                }, 50 );
-            }
-        } );
+        //         setTimeout( () => {
+        //             e.target.value = '';
+        //         }, 50 );
+        //     }
+        // } );
 
 
         //When the video icon is clicked
-        document.getElementById( 'toggle-video' ).addEventListener( 'click', ( e ) => {
-            e.preventDefault();
+        // document.getElementById( 'toggle-video' ).addEventListener( 'click', ( e ) => {
+        //     e.preventDefault();
 
-            let elem = document.getElementById( 'toggle-video' );
+        //     let elem = document.getElementById( 'toggle-video' );
 
-            if ( myStream.getVideoTracks()[0].enabled ) {
-                e.target.classList.remove( 'fa-video' );
-                e.target.classList.add( 'fa-video-slash' );
-                elem.setAttribute( 'title', 'Show Video' );
+        //     if ( myStream.getVideoTracks()[0].enabled ) {
+        //         e.target.classList.remove( 'fa-video' );
+        //         e.target.classList.add( 'fa-video-slash' );
+        //         elem.setAttribute( 'title', 'Show Video' );
 
-                myStream.getVideoTracks()[0].enabled = false;
-            }
+        //         myStream.getVideoTracks()[0].enabled = false;
+        //     }
 
-            else {
-                e.target.classList.remove( 'fa-video-slash' );
-                e.target.classList.add( 'fa-video' );
-                elem.setAttribute( 'title', 'Hide Video' );
+        //     else {
+        //         e.target.classList.remove( 'fa-video-slash' );
+        //         e.target.classList.add( 'fa-video' );
+        //         elem.setAttribute( 'title', 'Hide Video' );
 
-                myStream.getVideoTracks()[0].enabled = true;
-            }
+        //         myStream.getVideoTracks()[0].enabled = true;
+        //     }
 
-            broadcastNewTracks( myStream, 'video' );
-        } );
+        //     broadcastNewTracks( myStream, 'video' );
+        // } );
 
 
         //When the mute icon is clicked
-        document.getElementById( 'toggle-mute' ).addEventListener( 'click', ( e ) => {
-            e.preventDefault();
+        // document.getElementById( 'toggle-mute' ).addEventListener( 'click', ( e ) => {
+        //     e.preventDefault();
 
-            let elem = document.getElementById( 'toggle-mute' );
+        //     let elem = document.getElementById( 'toggle-mute' );
 
-            if ( myStream.getAudioTracks()[0].enabled ) {
-                e.target.classList.remove( 'fa-microphone-alt' );
-                e.target.classList.add( 'fa-microphone-alt-slash' );
-                elem.setAttribute( 'title', 'Unmute' );
+        //     if ( myStream.getAudioTracks()[0].enabled ) {
+        //         e.target.classList.remove( 'fa-microphone-alt' );
+        //         e.target.classList.add( 'fa-microphone-alt-slash' );
+        //         elem.setAttribute( 'title', 'Unmute' );
 
-                myStream.getAudioTracks()[0].enabled = false;
-            }
+        //         myStream.getAudioTracks()[0].enabled = false;
+        //     }
 
-            else {
-                e.target.classList.remove( 'fa-microphone-alt-slash' );
-                e.target.classList.add( 'fa-microphone-alt' );
-                elem.setAttribute( 'title', 'Mute' );
+        //     else {
+        //         e.target.classList.remove( 'fa-microphone-alt-slash' );
+        //         e.target.classList.add( 'fa-microphone-alt' );
+        //         elem.setAttribute( 'title', 'Mute' );
 
-                myStream.getAudioTracks()[0].enabled = true;
-            }
+        //         myStream.getAudioTracks()[0].enabled = true;
+        //     }
 
-            broadcastNewTracks( myStream, 'audio' );
-        } );
+        //     broadcastNewTracks( myStream, 'audio' );
+        // } );
 
 
         //When user clicks the 'Share screen' button
-        document.getElementById( 'share-screen' ).addEventListener( 'click', ( e ) => {
-            e.preventDefault();
+        // document.getElementById( 'share-screen' ).addEventListener( 'click', ( e ) => {
+        //     e.preventDefault();
 
-            if ( screen && screen.getVideoTracks().length && screen.getVideoTracks()[0].readyState != 'ended' ) {
-                stopSharingScreen();
-            }
+        //     if ( screen && screen.getVideoTracks().length && screen.getVideoTracks()[0].readyState != 'ended' ) {
+        //         stopSharingScreen();
+        //     }
 
-            else {
-                shareScreen();
-            }
-        } );
+        //     else {
+        //         shareScreen();
+        //     }
+        // } );
 
 
         //When record button is clicked
-        document.getElementById( 'record' ).addEventListener( 'click', ( e ) => {
-            /**
-             * Ask user what they want to record.
-             * Get the stream based on selection and start recording
-             */
-            if ( !mediaRecorder || mediaRecorder.state == 'inactive' ) {
-                h.toggleModal( 'recording-options-modal', true );
-            }
+        // document.getElementById( 'record' ).addEventListener( 'click', ( e ) => {
+        //     /**
+        //      * Ask user what they want to record.
+        //      * Get the stream based on selection and start recording
+        //      */
+        //     if ( !mediaRecorder || mediaRecorder.state == 'inactive' ) {
+        //         h.toggleModal( 'recording-options-modal', true );
+        //     }
 
-            else if ( mediaRecorder.state == 'paused' ) {
-                mediaRecorder.resume();
-            }
+        //     else if ( mediaRecorder.state == 'paused' ) {
+        //         mediaRecorder.resume();
+        //     }
 
-            else if ( mediaRecorder.state == 'recording' ) {
-                mediaRecorder.stop();
-            }
-        } );
+        //     else if ( mediaRecorder.state == 'recording' ) {
+        //         mediaRecorder.stop();
+        //     }
+        // } );
 
 
-        //When user choose to record screen
-        document.getElementById( 'record-screen' ).addEventListener( 'click', () => {
-            h.toggleModal( 'recording-options-modal', false );
+        // //When user choose to record screen
+        // document.getElementById( 'record-screen' ).addEventListener( 'click', () => {
+        //     h.toggleModal( 'recording-options-modal', false );
 
-            if ( screen && screen.getVideoTracks().length ) {
-                startRecording( screen );
-            }
+        //     if ( screen && screen.getVideoTracks().length ) {
+        //         startRecording( screen );
+        //     }
 
-            else {
-                h.shareScreen().then( ( screenStream ) => {
-                    startRecording( screenStream );
-                } ).catch( () => { } );
-            }
-        } );
+        //     else {
+        //         h.shareScreen().then( ( screenStream ) => {
+        //             startRecording( screenStream );
+        //         } ).catch( () => { } );
+        //     }
+        // } );
 
 
         //When user choose to record own video
-        document.getElementById( 'record-video' ).addEventListener( 'click', () => {
-            h.toggleModal( 'recording-options-modal', false );
+        // document.getElementById( 'record-video' ).addEventListener( 'click', () => {
+        //     h.toggleModal( 'recording-options-modal', false );
 
-            if ( myStream && myStream.getTracks().length ) {
-                startRecording( myStream );
-            }
+        //     if ( myStream && myStream.getTracks().length ) {
+        //         startRecording( myStream );
+        //     }
 
-            else {
-                h.getUserFullMedia().then( ( videoStream ) => {
-                    startRecording( videoStream );
-                } ).catch( () => { } );
-            }
-        } );
+        //     else {
+        //         h.getUserFullMedia().then( ( videoStream ) => {
+        //             startRecording( videoStream );
+        //         } ).catch( () => { } );
+        //     }
+        // } );
     }
 } );
