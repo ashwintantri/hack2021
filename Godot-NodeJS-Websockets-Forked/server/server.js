@@ -113,7 +113,7 @@ var express = require('express');
 var app = express(); 
 var serv = require('http').Server(app);
 app.get('/',function(req,res) {
-	 res.sendFile(__dirname + '/client/index.html'); // serve index.html file
+	 res.sendFile(__dirname + '/exported-client/index.html'); // serve index.html file
  });
-app.use('/',express.static(__dirname + '/client')); // serve files from "client" directory on server root
+app.use('/',express.static(__dirname + '/exported-client')); // serve files from "client" directory on server root
 serv.listen(HTTP_PORT); // express listen for clients
